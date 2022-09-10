@@ -159,13 +159,14 @@ void ex16()
     printf("O salario bruto é de %0.1f\n", salariobruto);
     printf("O salario liquido é de %0.1f\n", salariobruto - inss);
 
-
-
-
 }
 void ex17()
 {
-
+    int x, mod; 
+    printf("Digite um número: ");
+    scanf("%d", &x);
+    mod = fabs(x);
+    printf("O módulo do número digitado é %d\n", mod);
 }
 void ex18()
 {
@@ -187,6 +188,7 @@ int main(){
     //ex13();
     //ex14();
     //ex15();
-    ex16();
+    //ex16();
+    ex17();
 
 }
