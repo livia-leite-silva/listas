@@ -170,9 +170,78 @@ void ex17()
 }
 void ex18()
 {
+    float raio, pi = (3.14159);
+    printf("Digite o raio do círculo:\n");
+    scanf("%f", &raio);
+    printf("A circunferência do círculo é: %0.1f\n", 2 * pi * raio);
+    printf("O diâmetro do círculo é: %0.1f\n", 2 * raio);
+    printf("A área do círculo é: %0.1f\n", pi * (raio * raio));
 
 }
+void ex19()
+{
+        printf("********\t    ***   \t   *   \t         *          \n");
+        printf("*      *\t  *     * \t  ***  \t      *    *        \n");
+        printf("*      *\t *       *\t ***** \t    *        *      \n");
+        printf("*      *\t *       *\t   *   \t  *            *    \n");
+        printf("*      *\t *       *\t   *   \t *               *  \n");
+        printf("*      *\t *       *\t   *   \t   *           *    \n");
+        printf("*      *\t *       *\t   *   \t     *       *      \n");
+        printf("*      *\t  *     * \t   *   \t       *   *        \n");
+        printf("********\t    ***   \t   *   \t         *          \n");
+}
+void ex20()
+{
+    int num;
+    printf("Digite um número:\n");
+    scanf("%d", &num);
+    (num%2)? printf("O número %d é ímpar!") : printf("O número %d é par");
+}
+void ex21()
+{
+    int in1, in2;
+    printf("Digite um número inteiro:\n");
+    scanf("%d", &in1);
+    printf("Digite um número inteiro:\n");
+    scanf("%d", &in2);
+    (in1/in2), (in2/in1)? printf("é múltiplo\n") : printf("Não é múltiplo\n");
+}
+void ex22()
+{
+    //A = 65 B = 66 a = 97 b = 98 * = 42 + = 43 $ = 36 space = 32 0 = 48 / = 47 12 = 49 50
+} 
+void ex23()
+{
+    int num, c, u, d;
+    printf("Digite um número de 3 dígitos: ");
+    scanf("%d", &num);
+    c = (num / 100);
+    u = (d % 10);
+    d = (num % 100) / 10;
+    printf("O número digitado ao contrario é: %d%d%d\n", u, d, c);
+}
+void ex24()
+{
+    int x, n;
+    printf("Digite um valor para x:\n");
+    scanf("%d", &x);
+    printf("Digite um valor para n:\n");
+    scanf("%d", &n);
+    printf("O produto desse valor por 2 elevado a %d é: %d", n, (2 * x << (n - 1)));
 
+
+}
+void ex25()
+{
+    int s, m, h, resto;
+    printf("Digite um tempo em segundos: ");
+    scanf("%d", &s);
+    h = s / 3600;
+    resto = (s % 3600);
+    m = (resto / 60);
+    s = (resto % 60);
+    printf("Nesse tempo temos %d horas %d minutos %d segundos\n", h, m, s);
+}
 
 int main(){
     //ex3();
@@ -189,6 +258,16 @@ int main(){
     //ex14();
     //ex15();
     //ex16();
-    ex17();
+    //ex17();
+    //ex18();
+    //ex19();
+    //ex20();
+    //ex21();
+    //ex22();
+    //ex23();
+    //ex24();
+    //ex25();
+    //ex26();
+    //ex27();
 
 }
