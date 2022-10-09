@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 
 #define TAM 15
@@ -127,6 +128,25 @@ void q6(){
     printf("%s\n", auxiliar);
 }
 void q7(){
+    int v[3];
+    int i, soma=0, mult=1;
+    float media1;
+    double media2;
+    srand(time(NULL));
+    for(i=0; i<3; i++){
+       v[i] = rand() % 20;
+       printf("%d ", v[i]);
+    }
+    for(i=0; i<3; i++){
+       soma += v[i];
+       mult *= v[i];
+    }
+    media1 = (float)soma/3;
+    media2 = cbrt(mult);
+    printf("\nMédia Aritmética: %.1f\nMédia Geométrica: %.lf\n", media1, media2);
+
+}
+void q8(){
 
 }
 
@@ -140,5 +160,6 @@ int main(){
     // q5cFuncao();
     // q5sFuncao();
     // q6();
-    q7();
+    // q7();
+    q8();
 }
