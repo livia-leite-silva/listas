@@ -122,31 +122,115 @@ void q6(){
     j = t - 1; //retira o '\0'
     for (i=0; i < t; i++){
         auxiliar[i] = string[j];
-        j = j - 1;
+        j--;
     }
     auxiliar[i] = '\0';
     printf("%s\n", auxiliar);
 }
+#define TAM3 3
 void q7(){
-    int v[3];
+    int v[TAM3];
     int i, soma=0, mult=1;
     float media1;
     double media2;
     srand(time(NULL));
-    for(i=0; i<3; i++){
+    for(i=0; i<TAM3; i++){
        v[i] = rand() % 20;
        printf("%d ", v[i]);
     }
-    for(i=0; i<3; i++){
+    for(i=0; i<TAM3; i++){
        soma += v[i];
        mult *= v[i];
     }
-    media1 = (float)soma/3;
+    media1 = (float)soma/TAM3;
     media2 = cbrt(mult);
     printf("\nMédia Aritmética: %.1f\nMédia Geométrica: %.lf\n", media1, media2);
 
 }
+//ordenação por seleção
+#define TAM2 100
 void q8(){
+    int v[TAM2];
+    int i, j, n, troca=0;
+    srand(time(NULL));
+    printf("digite um intervalo de números: ");
+    scanf("%d", &n);
+    for(i=0;i<TAM2;i++){
+        v[i] = rand() % n;
+    }
+    for (i=0; i<TAM2-1; i++){
+        for (j=i+1; j<TAM2; j++){
+            if (v[i] > v[j]){
+                troca = v[i];
+                v[i]=v[j];
+                v[j]=troca;
+            }
+        }
+    }
+    puts("Vetor ordenado:\n");
+    for(i=0;i<TAM2;i++)
+        printf("%d ", v[i]);
+}
+//bubble sort
+void q8parte2(){
+    int v[TAM2];
+    int i, j, n, troca=0;
+    srand(time(NULL));
+    printf("digite um intervalo de números: ");
+    scanf("%d", &n);
+    for(i=0;i<TAM2;i++){
+        v[i] = rand() % n;
+    }
+    for (i=1; i<TAM2; i++){
+        for (j=0; j<TAM2-1; j++){
+            if (v[j] > v[j+1]){
+                troca = v[j];
+                v[j]=v[j+1];
+                v[j+1]=troca;
+            }
+        }
+    }
+    puts("Vetor ordenado:\n");
+    for(i=0;i<TAM2;i++)
+        printf("%d ", v[i]);
+}
+void q9(){
+    int vetor[TAM3][TAM3];
+    int i, j;
+    for (i=0;i<TAM3;i++){
+        for (j=0;j<TAM3;j++){
+            printf("Número da posição [%d][%d] do vetor bidimensional: ", i+1,j+1);
+            scanf("%d", &vetor[i][j]);
+        }
+    }
+    puts("\nDiagonal Principal");
+    for (i=0;i<TAM3;i++){
+        for (j=0;j<TAM3;j++){
+            if (i == j){
+                printf("%d ", vetor[i][j]);
+            }
+        }
+    }
+}
+void q10(){
+    int vetor[TAM3][TAM3];
+    int i, j, x, c=0;
+    srand(time(NULL));
+    printf("Digite um valor: ");
+    scanf("%d", &x);
+    puts("\nVetor aleatório");
+    for (i=0;i<TAM3;i++){
+        for (j=0;j<TAM3;j++){
+            vetor[i][j] = rand() % 10;
+            printf("%d ", vetor[i][j]);
+        }
+    }
+    for (i=0;i<TAM3;i++)
+        for (j=0;j<TAM3;j++)
+            if (x == vetor[i][j])
+                c += 1; 
+    printf("\nO valor %d foi repetido %d vezes\n", x,c);
+
 
 }
 
@@ -156,10 +240,13 @@ int main(){
     //q2();
     //q3();
     //q4comFuncao();
-    // q4semFuncao();
-    // q5cFuncao();
-    // q5sFuncao();
-    // q6();
-    // q7();
-    q8();
+    //q4semFuncao();
+    //q5cFuncao();
+    //q5sFuncao();
+    //q6();
+    //q7();
+    //q8();
+    //q8parte2();
+    //q9();
+    q10();
 }
