@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+
 #define TAM 15
 void q1(){
     float v[TAM], maior=0, menor=0, soma;
@@ -79,17 +83,57 @@ void q4semFuncao(){
 }
 void q5cFuncao(){
     char string1[TAM], string2[TAM];
-    char *f;
     printf("Digite uma string: ");
     fgets(string1, TAM, stdin);
     printf("Digite outra string: ");
     fgets(string2, TAM, stdin);
-    f = strcat(string1, string2);
-    printf("%s", f);
-
+    strcat(string1, string2);
+    printf("%s", string1);
 }
-
-
+#define ALL 35
+void q5sFuncao(){
+    char s1[TAM], s2[TAM], srecebe[ALL];
+    int i=0, j=0;
+    printf("Digite uma string: ");
+    fgets(s1, TAM, stdin);
+    printf("Digite outra string: ");
+    fgets(s2, TAM, stdin);
+    while(s1[i] != '\0'){
+        srecebe[j] = s1[i];
+        i++;
+        j++;
+    }
+    i = 0;
+    while (s2[i] != '\0'){
+        srecebe[j] = s2[i];
+        i++;
+        j++;
+    }
+    srecebe[j] = '\0';
+    printf("%s", srecebe);
+}
+void q6(){
+    char string[TAM], auxiliar[TAM];
+    int i, j, t; 
+    printf("Digite uma string:");
+    scanf("%s", string);
+    t = strlen(string);
+    j = t - 1; //retira o '\0'
+    for (i=0; i < t; i++){
+        auxiliar[i] = string[j];
+        j = j - 1;
+    }
+    auxiliar[i] = '\0';
+    printf("%s\n", auxiliar);
+}
+void q7(){
+    int vetor[3], i;
+    srand(time(NULL));
+    for(i=0; i<3; i++){
+        vetor[i] = rand() % 20;
+    }
+    printf("%d ", vetor[i]);
+}
 
 
 int main(){
@@ -98,6 +142,8 @@ int main(){
     //q3();
     //q4comFuncao();
     // q4semFuncao();
-    q5cFuncao();
-    
+    // q5cFuncao();
+    // q5sFuncao();
+    // q6();
+    q7();
 }
