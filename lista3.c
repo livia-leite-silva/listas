@@ -127,12 +127,7 @@ void q6(){
     printf("%s\n", auxiliar);
 }
 void q7(){
-    int vetor[3], i;
-    srand(time(NULL));
-    for(i=0; i<3; i++){
-        vetor[i] = rand() % 20;
-    }
-    printf("%d ", vetor[i]);
+
 }
 
 
