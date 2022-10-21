@@ -2,6 +2,43 @@
 #include <stdlib.h>
 #include <math.h>
 
+void ex1()
+{
+    int dias;
+    printf("Digite um número: ");
+    scanf("%d", &dias);
+    switch(dias)
+    {
+        case 0: 
+        printf("Programa encerrado.\n");
+        break;
+        case 1:
+        printf("Domingo.\n");
+        break;
+        case 2:
+        printf("Segunda.\n");
+        break;
+        case 3:
+        printf("Terça.\n");
+        break;
+        case 4:
+        printf("Quarta.\n");
+        break;
+        case 5:
+        printf("Quinta.\n");
+        break;
+        case 6:
+        printf("Sexta.\n");
+        break;
+        case 7:
+        printf("Sábado.\n");
+        break;
+        default:
+        printf("Número de dia não válido.\n");
+        break;
+
+    }
+}
 void ex2()
 {
     int dias;
@@ -86,7 +123,7 @@ void ex5()
     }
     printf("O maior número digitado foi %0.1f e o menor %0.1f\n", maior, menor);
  }
-void ex6()
+void ex6() //dando erro quando pede pra encerrar com num negativo
 {
     int voto;
     do{
@@ -125,10 +162,11 @@ void ex7()
 }
 void ex8()
 {
-    float e, p, total, resto;
+    float e, p, total;
+    int resto;
     printf("Digite o valor total do(s) produto(s) R$: ");
     scanf("%f", &total);
-    resto = (total % 3);
+    resto = total % 3;
     if (resto = 0){
         printf("A entrada e as parcelas valem: %0.1f");
     }else{
@@ -221,8 +259,9 @@ void ex17(){
         printf("\t%d Celsius equivale a %d Fahrenheit.\n", c, fah);
     }
 }
-
-
+void ex18(){
+    
+}
 
 int main()
 {
