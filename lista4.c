@@ -22,6 +22,7 @@ void somar (int *px, int *py, int *ps){
 }
 
 
+
 // Questão 2
 void troca (int *x, int *y){
     int aux;
@@ -37,6 +38,7 @@ void q2(){
     troca(&a, &b);
     printf("a = %d\nb = %d\n", a,b);
 }
+
 
 
 // Questão 3
@@ -55,17 +57,18 @@ void q3(){
 
 }
 
+
+
+
 // Questão 4
-#define TAM 15
-#define MX 100 
-#define INI 0
+#define TAM 10
 void imprimirVetor(int *, int);
-void preencherVetor(int *, int, int, int);
+void preencherVetor(int *, int);
 
 void q4(){
     int v[TAM], maior, menor;
 
-    preencherVetor(v, TAM, INI, MX);
+    preencherVetor(v, TAM);
     imprimirVetor(v, TAM);
     printf("---\n");
 
@@ -76,12 +79,16 @@ void imprimirVetor(int *pd, int qtd){
     }
 }
 
-void preencherVetor(int *pd, int qtd, int inicial, int qtdFaixa){
-    srand(time(NULL));
-    for (int k=0; k<qtd; k++){
-        *(pd+k) = inicial + rand() % qtdFaixa;
+void preencherVetor(int *v, int qtd){
+    int i;
+    for (int i=0; i<qtd; i++){
+        printf("Digite um valor pro vetor[%d]: ", i);
+        scanf("%d", v+i);
     }
 }
+
+
+
 
 // Questão 5
 #define S 30
@@ -102,6 +109,7 @@ void qtdChar(char *p)
     for (i=0; p[i] != '\0'; i++);
     printf("Quantidade de caractere da string: %d\n", i);
 }
+
 
 
 // Questão 6
@@ -127,6 +135,7 @@ void copiaString(char *copia, char *recebe)
 }
 
 
+
 // Questão 7
 void q7()
 {
@@ -138,6 +147,8 @@ void q7()
     printf("%s %s ", ps1, ps2);
 
 }
+
+
 
 // Questão 8
 void q8(){
@@ -159,6 +170,55 @@ char str, caractere, *ps=&str, *pc=&caractere;
 }
 
 
+
+// Questão 9
+void pVetor(int *v, int tam);
+void iVetor(int *v, int tam);
+void BubbleSort(int *v, int tam);
+
+void q9() 
+{
+    int num[10];
+
+    pVetor(num, 10);
+    puts("\nVetor Aleatório:");
+    iVetor(num,10);
+    puts("\n----");
+    puts("Ordenados:");
+    BubbleSort(num,10);
+    iVetor(num,10);
+}
+
+void pVetor(int *v, int tam)
+{
+    int i;
+    srand(time(NULL));
+    for(i=0;i<tam;i++){
+        *(v+i)=rand() % 300;
+    }
+}
+void BubbleSort(int *v, int tam){
+	int m, troca, i, j;
+	troca=1;
+	for(j=tam-1;(j>=1)&&(troca==1);j--){
+		troca=0; 
+		for(i=0; i<j; i++){
+				if(*(v+i)>*(v+i+1)){
+					troca=1; 
+					m=*(v+i);
+					*(v+i)=*(v+i+1);
+					*(v+i+1)=m;
+			    }
+		}
+	}
+}
+void iVetor(int *v, int tam){
+    int i;
+    for(i=0;i<tam;i++){
+        printf("%d ", *(v+i));
+    }
+}
+
 int main(){
     //q1();
     //q2();
@@ -168,6 +228,6 @@ int main(){
     //q6();
     //q7();
     //q8();
-
+    // q9();
 
 }
