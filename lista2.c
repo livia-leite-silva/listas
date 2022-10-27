@@ -162,11 +162,10 @@ void ex7()
 }
 void ex8()
 {
-    float e, p, total;
-    int resto;
+    float e, p, total, resto;
     printf("Digite o valor total do(s) produto(s) R$: ");
     scanf("%f", &total);
-    resto = total % 3;
+    resto = total%3;
     if (resto = 0){
         printf("A entrada e as parcelas valem: %0.1f");
     }else{

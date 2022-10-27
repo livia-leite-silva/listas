@@ -250,8 +250,6 @@ void q10(){
             if (x == vetor[i][j])
                 c += 1; 
     printf("\nO valor %d foi repetido %d vezes\n", x,c);
-
-
 }
 
 
