@@ -36,9 +36,10 @@ void ex1()
         default:
         printf("Número de dia não válido.\n");
         break;
-
     }
 }
+
+
 void ex2()
 {
     int dias;
@@ -78,6 +79,8 @@ void ex2()
     }
     } while(dias);
 } 
+
+
 void ex3()
 {
     int F, fatorial = 1;
@@ -88,6 +91,8 @@ void ex3()
     }
     printf("\nO fatorial de é: %d\n", fatorial);
 }
+
+
 void ex4()
 {
    float pedro, jose;
@@ -102,6 +107,8 @@ void ex4()
    }while(pedro < jose);
    printf("Em %d anos, Pedro será maior que José", i);
 }
+
+
 void ex5()
 {
     float n, maior, menor;
@@ -116,20 +123,25 @@ void ex5()
             if(n > maior){
                 maior = n;
             }
-            if(n < menor, n != 0){
+            if(n < menor && n != 0){
                 menor = n;
             }
         }
     }
     printf("O maior número digitado foi %0.1f e o menor %0.1f\n", maior, menor);
  }
-void ex6() //dando erro quando pede pra encerrar com num negativo
+
+
+void ex6() 
 {
     int voto;
     do{
-
+    puts("\n\n\tURNA ELETRÔNICA\n\n0-VOTO EM BRANCO\n5-PAULO\n7-RENATA\n");
     printf("NÚMERO DO CANDIDATO: ");
     scanf("%d", &voto);
+
+    if(voto<0) break;
+
     switch(voto){
         case 0:
         printf("Você votou em branco.\nVoto confirmado!\n");
@@ -144,8 +156,10 @@ void ex6() //dando erro quando pede pra encerrar com num negativo
         printf("Você votou nulo.\nVoto confirmado!\n");
         break;
     }
-} while(voto >= 0);
+    } while(1);
 }
+
+
 void ex7()
 {
     float num1, num2;
@@ -160,20 +174,25 @@ void ex7()
     }
     printf("O resultado da divisão é %f\n", (float)num1/num2);
 }
+
+
 void ex8()
 {
-    float e, p, total, resto;
+    float e, p, total;
+    float resto;
     printf("Digite o valor total do(s) produto(s) R$: ");
     scanf("%f", &total);
-    resto = total%3;
-    if (resto = 0){
-        printf("A entrada e as parcelas valem: %0.1f");
+    resto = (int)total%3;
+    if (resto == 0){
+        printf("A entrada e as parcelas valem: %.1f", p);
     }else{
         e = (1/3) * total;
         p = ((1/3) * total) - resto;
-        printf("A entrada é de %0.1f e as duas parcelas valem %0.1f", e, p);
+        printf("A entrada é de %.1f e as duas parcelas valem %.1f", e, p);
     }
 }
+
+
 void ex9()
 {
     int a, c = 1, n = 20, b1, b2 = 0;
@@ -184,6 +203,8 @@ void ex9()
     }
     printf("O enésimo termo da sequencia de Fibonacci é: %d", b1);
 }
+
+
 void ex10(){
     int i;
     for(i = 15; i <= 90; i++){
@@ -192,6 +213,8 @@ void ex10(){
         }
     }
 }
+
+
 void ex12(){
     int num, multi, i;
     printf("Digite um número para saber sua tabuada: ");
@@ -201,25 +224,29 @@ void ex12(){
         printf("%d x %d = %d \n", num, i, multi);
     }
 }
+
+
 void ex13(){
     int A, B, num;
     printf("Digite um faixa de números(A e B) para saber os pares entre eles: \n");
     scanf("%d %d", &A, &B);
     if(A < B){
-            for(num = A; num <= B; num++){
-                if(num % 2 == 0){
+        for(num = A; num <= B; num++){
+            if(num % 2 == 0){
                     printf("%d \n", num);
+            }
         }
-    }
     }
     if(A > B){
         for(num = A; num >= B; num--){
             if(num % 2 == 0){
                 printf("%d \n", num);
-        }
-    }  
+            }
+        }  
     }
 }
+
+
 void ex14(){
     int A, B, num, c = 0;
     printf("Digite um faixa de números(A e B) para saber os pares entre eles: \n");
@@ -235,11 +262,13 @@ void ex14(){
         for(num = A; num >= B; num--){
             if(num % 3 == 0){
                 c += 1;  
-        }
-    }  
+            }
+        }  
     }
     printf("%d \n", c);
 }
+
+
 void ex15(){
     int num = 3, i;
     printf("\n\n\tO resultados das potências do valor de base 3 elevado aos valores 0 a 7.\n\n");
@@ -247,9 +276,18 @@ void ex15(){
         printf("\n%d elevado à %d = %d\n", num, i, (int)pow(num, i));
     }
 }
-void ex16(){
 
+
+void ex16(){
+    int i, soma=0, soma2=0;
+    for (i=0;i<101;i++){    
+        if (i%3==0){
+            soma += i;
+        }
+    }
 }
+
+
 void ex17(){
     int c, fah;
     printf("\n\n\tTABELA CELSIUS - FAHRENHEIT\n\n");
@@ -258,15 +296,36 @@ void ex17(){
         printf("\t%d Celsius equivale a %d Fahrenheit.\n", c, fah);
     }
 }
-void ex18(){
-    
+
+
+void ex19(){
+    int i,a,b,soma=0,media;
+
+    printf("Digite uma faixa de números: ");
+    scanf("%d%d",&a,&b);
+    for(i=a;i<=b;i++){
+        soma += i;
+    }
+    media = soma/(b-a);
+    printf("Media: %d\n", media);
 }
+
+
+void ex20(){
+    int i, fat=1;
+    for (i=1;i<11;i++){
+        if ((i%2)==1){
+            fat *= i; 
+        }
+    }
+    printf("Fatorial de números ímpares: %d\n", fat);
+}
+
+
 
 int main()
 {
-    //ex10();
-    //ex11();
-    //ex12();
-    //ex13();
-    //ex14();
+    // ex6();
+    // ex20();
+
 }
