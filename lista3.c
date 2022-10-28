@@ -30,6 +30,7 @@ void q1()
 
 }
 
+
 void q2()
 {
     char str,caractere;
@@ -48,6 +49,8 @@ void q2()
         printf("Contém!\n");
     }
 }
+
+
 void q3()
 {
     char string[TAM];
@@ -57,6 +60,8 @@ void q3()
     for (i=0; string[i] != '\0'; i++);
     printf("Quantidade de caracteres: %d\n", i);
 }
+
+
 void q4comFuncao(){
     char string1[TAM], string2[TAM];
     char contem;
@@ -70,7 +75,9 @@ void q4comFuncao(){
     }else{
         printf("As strings não são iguais!\n");
     }
-}   
+}  
+
+
 void q4semFuncao(){
     char string1[TAM]; 
     char string2[TAM];
@@ -96,6 +103,8 @@ void q4semFuncao(){
         printf("As strings não são iguais!\n");
     }
 }
+
+
 void q5cFuncao(){
     char string1[TAM], string2[TAM];
     printf("Digite uma string: ");
@@ -106,8 +115,8 @@ void q5cFuncao(){
     printf("%s", string1);
 }
 
-#define ALL 35
 
+#define ALL 35
 void q5sFuncao()
 {
     char s1[TAM], s2[TAM], srecebe[ALL];
@@ -132,6 +141,7 @@ void q5sFuncao()
     printf("%s", srecebe);
 }
 
+
 void q6(){
     char string[TAM], auxiliar[TAM];
     int i, j, t; 
@@ -146,6 +156,7 @@ void q6(){
     auxiliar[i] = '\0';
     printf("%s\n", auxiliar);
 }
+
 
 #define TAM3 3
 void q7(){
@@ -167,6 +178,8 @@ void q7(){
     printf("\nMédia Aritmética: %.1f\nMédia Geométrica: %.lf\n", media1, media2);
 
 }
+
+
 // ordenação por seleção
 #define TAM2 100
 void q8(){
@@ -191,6 +204,8 @@ void q8(){
     for(i=0;i<TAM2;i++)
         printf("%d ", v[i]);
 }
+
+
 //bubble sort
 void q8parte2(){
     int v[TAM2];
@@ -214,6 +229,8 @@ void q8parte2(){
     for(i=0;i<TAM2;i++)
         printf("%d ", v[i]);
 }
+
+
 void q9(){
     int vetor[TAM3][TAM3];
     int i, j;
@@ -232,6 +249,8 @@ void q9(){
         }
     }
 }
+
+
 void q10(){
     int vetor[TAM3][TAM3];
     int i, j, x, c=0;
@@ -255,16 +274,6 @@ void q10(){
 
 int main(){
     //q1();
-    q2();
     //q3();
     //q4comFuncao();
-    //q4semFuncao();
-    //q5cFuncao();
-    //q5sFuncao();
-    //q6();
-    //q7();
-    //q8();
-    //q8parte2();
-    //q9();
-    //q10();
 }
