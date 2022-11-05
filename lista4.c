@@ -203,12 +203,12 @@ void BubbleSort(int *v, int tam){
 	for(j=tam-1;(j>=1)&&(troca==1);j--){
 		troca=0; 
 		for(i=0; i<j; i++){
-				if(*(v+i)>*(v+i+1)){
-					troca=1; 
-					m=*(v+i);
-					*(v+i)=*(v+i+1);
-					*(v+i+1)=m;
-			    }
+			if(*(v+i)>*(v+i+1)){
+				troca=1; 
+				m=*(v+i);
+				*(v+i)=*(v+i+1);
+				*(v+i+1)=m;
+			}
 		}
 	}
 }
@@ -219,15 +219,58 @@ void iVetor(int *v, int tam){
     }
 }
 
+
+
+// Questao 10
+#define SIZE 10
+#define N 7
+#define INI 0
+
+void vetorAleatorio(int*, int, int, int);
+void impVetor(int*, int);
+void contadorFrequencia(int*, int, int*, int);
+
+
+void q10(){
+    int v[SIZE], f[N];
+    vetorAleatorio(v,SIZE,INI,N-1);
+    puts("Vetor Aleatório: ");
+    impVetor(v,SIZE);
+    contadorFrequencia(v,SIZE,f,N);
+    puts("Contador de frequência: ");
+    impVetor(f,N);
+
+}
+void vetorAleatorio(int *v, int n, int inicial, int final){
+    srand(time(NULL));
+    int i;
+    for(i=0;i<n;i++){
+        *(v+i) = inicial + rand() % final;
+    }
+}
+void impVetor(int *v, int n){
+    int i;
+    for(i=0;i<n;i++){
+        printf("%d ",*(v+i));
+    }
+    puts("\n");
+}
+void contadorFrequencia(int *v, int n1, int *f, int n2){
+    int i, j, c = 0;
+    for(i=0;i<n2;i++){
+        for(j=0;j<n1;j++){
+            if(i == *(v+j)){
+                c++;
+            }
+        }
+        *(f+i) = c;
+        c = 0;
+    }
+}
+
+
 int main(){
     //q1();
     //q2();
-    //q3();
-    //q4();
-    //q5();
-    //q6();
-    //q7();
-    //q8();
-    // q9();
-
+    //q10();
 }
