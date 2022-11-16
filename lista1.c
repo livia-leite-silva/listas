@@ -518,7 +518,7 @@ void ex18()
     printf("A circunferência do círculo é: %0.1f\n", 2 * pi * raio);
     printf("O diâmetro do círculo é: %0.1f\n", 2 * raio);
     printf("A área do círculo é: %0.1f\n", pi * (raio * raio));
->>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24:lista1.c
+
 
 
 void q9(){
@@ -537,7 +537,7 @@ void q9(){
                 printf("%d ", vetor[i][j]);
             }
         }
->>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24
+
     }
 }
 
