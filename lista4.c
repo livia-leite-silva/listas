@@ -152,7 +152,8 @@ void q7()
 
 // Questão 8
 void q8(){
-char str, caractere, *ps=&str, *pc=&caractere;
+    char str, caractere, *ps=&str, *pc=&caractere;
+
     char * contem;
     printf("Digite uma palavra: ");
     scanf("%s", ps);
