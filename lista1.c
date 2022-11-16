@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< HEAD
 #include <stdlib.h>
 #include <math.h>
 
@@ -49,10 +50,61 @@ void ex6()
     }else
     {
         printf("Seu peso ideal é %0.1f", 72.7 * altura - 58);
+=======
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
+
+
+#define TAM 15
+
+void q1()
+{
+    float v[TAM], maior=0, menor=0, soma;
+    int i;
+    for (i=0;i<15;i++)
+    {
+        printf("digite o %dº valor: ",i+1);
+        scanf("%f", &v[i]);
+        if (i == 0){
+            maior = menor = v[i];
+        }else if(v[i] > maior)
+        {
+            maior = v[i];
+        }else if(v[i] < menor)
+        {
+            menor = v[i];
+        }
+    }
+    soma = maior + menor;
+    printf("A soma do maior e menor número digitado é: %0.1f\n", soma);
+
+}
+
+
+void q2()
+{
+    char str,caractere;
+    char * contem;
+    printf("Digite uma palavra: ");
+    scanf("%s", &str);
+    fflush(stdin);
+    printf("Digite um caractere: ");
+    scanf("%c", &caractere);
+    contem = strchr(&str, caractere);
+    if (contem == 0)
+    {
+        printf("Não contém!\n");
+    }else
+    {
+        printf("Contém!\n");
+>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24
     }
 }
 
 
+<<<<<<< HEAD
 void ex7()
 {
     int horas, minutos, segundos;
@@ -161,6 +213,188 @@ void ex15()
 }
 
 
+=======
+void q3()
+{
+    char string[TAM];
+    int i;
+    printf("Digite uma string: ");
+    fgets(string, TAM, stdin);
+    for (i=0; string[i] != '\0'; i++);
+    printf("Quantidade de caracteres: %d\n", i);
+}
+
+
+void q4comFuncao(){
+    char string1[TAM], string2[TAM];
+    char contem;
+    printf("Digite a 1º string:\n");
+    fgets(string1, TAM, stdin);
+    printf("Digite a 2º string:\n");
+    fgets(string2, TAM, stdin);
+    contem = strcmp(string1,string2);
+    if (contem == NULL){
+        printf("As strings são iguais!\n");
+    }else{
+        printf("As strings não são iguais!\n");
+    }
+}  
+
+
+void q4semFuncao(){
+    char string1[TAM]; 
+    char string2[TAM];
+    int i = 0;
+    printf("Digite uma string: ");
+    fgets(string1, TAM, stdin);
+    printf("Digite outra string: ");
+    fgets(string2, TAM, stdin);
+    while(string1[i] == string2[i])
+    {
+        if(string1[i]=='\0' || string2[i]=='\0')
+        {
+            break;
+        }else
+        i++;
+    }
+    if(string1[i]=='\0' && string2[i]=='\0')
+    {
+        printf("As strings são iguais!\n");
+    }
+    else
+    {
+        printf("As strings não são iguais!\n");
+    }
+}
+
+
+void q5cFuncao(){
+    char string1[TAM], string2[TAM];
+    printf("Digite uma string: ");
+    fgets(string1, TAM, stdin);
+    printf("Digite outra string: ");
+    fgets(string2, TAM, stdin);
+    strcat(string1, string2);
+    printf("%s", string1);
+}
+
+
+#define ALL 35
+void q5sFuncao()
+{
+    char s1[TAM], s2[TAM], srecebe[ALL];
+    int i=0, j=0;
+    printf("Digite uma string: ");
+    fgets(s1, TAM, stdin);
+    printf("Digite outra string: ");
+    fgets(s2, TAM, stdin);
+    while(s1[i] != '\0')
+    {
+        srecebe[j] = s1[i];
+        i++;
+        j++;
+    }
+    i = 0;
+    while (s2[i] != '\0'){
+        srecebe[j] = s2[i];
+        i++;
+        j++;
+    }
+    srecebe[j] = '\0';
+    printf("%s", srecebe);
+}
+
+
+void q6(){
+    char string[TAM], auxiliar[TAM];
+    int i, j, t; 
+    printf("Digite uma string:");
+    scanf("%s", string);
+    t = strlen(string);
+    j = t - 1; //retira o '\0'
+    for (i=0; i < t; i++){
+        auxiliar[i] = string[j];
+        j--;
+    }
+    auxiliar[i] = '\0';
+    printf("%s\n", auxiliar);
+}
+
+
+#define TAM3 3
+void q7(){
+    int v[TAM3];
+    int i, soma=0, mult=1;
+    float media1;
+    double media2;
+    srand(time(NULL));
+    for(i=0; i<TAM3; i++){
+       v[i] = rand() % 20;
+       printf("%d ", v[i]);
+    }
+    for(i=0; i<TAM3; i++){
+       soma += v[i];
+       mult *= v[i];
+    }
+    media1 = (float)soma/TAM3;
+    media2 = cbrt(mult);
+    printf("\nMédia Aritmética: %.1f\nMédia Geométrica: %.lf\n", media1, media2);
+
+}
+<<<<<<<< HEAD:lista3.c
+
+
+// ordenação por seleção
+#define TAM2 100
+void q8(){
+    int v[TAM2];
+    int i, j, n, troca=0;
+    srand(time(NULL));
+    printf("digite um intervalo de números: ");
+    scanf("%d", &n);
+    for(i=0;i<TAM2;i++){
+        v[i] = rand() % n;
+    }
+    for (i=0; i<TAM2-1; i++){
+        for (j=i+1; j<TAM2; j++){
+            if (v[i] > v[j]){
+                troca = v[i];
+                v[i]=v[j];
+                v[j]=troca;
+            }
+        }
+    }
+    puts("Vetor ordenado:\n");
+    for(i=0;i<TAM2;i++)
+        printf("%d ", v[i]);
+}
+
+
+//bubble sort
+void q8parte2(){
+    int v[TAM2];
+    int i, j, n, troca=0;
+    srand(time(NULL));
+    printf("digite um intervalo de números: ");
+    scanf("%d", &n);
+    for(i=0;i<TAM2;i++){
+        v[i] = rand() % n;
+    }
+    for (i=1; i<TAM2; i++){
+        for (j=0; j<TAM2-1; j++){
+            if (v[j] > v[j+1]){
+                troca = v[j];
+                v[j]=v[j+1];
+                v[j+1]=troca;
+            }
+        }
+    }
+    puts("Vetor ordenado:\n");
+    for(i=0;i<TAM2;i++)
+        printf("%d ", v[i]);
+}
+========
+>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24
 void ex16()
 {
     float valorhora, inss, salariobruto;
@@ -169,7 +403,11 @@ void ex16()
     printf("Valor de cada hora trabalhada: ");
     scanf("%f", &valorhora);
     printf("Horas trabalhadas no mês: ");
+<<<<<<< HEAD
     scanf("%d", &horatrabalhada);
+=======
+    scanf("%f", &horatrabalhada);
+>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24
     salariobruto = (valorhora * horatrabalhada);
     inss = (0.1 * salariobruto);
     
@@ -177,6 +415,7 @@ void ex16()
     printf("O salario liquido é de %0.1f\n", salariobruto - inss);
 
 }
+<<<<<<< HEAD
 
 
 void ex17()
@@ -262,10 +501,48 @@ void ex22()
         printf("/: %d\n",'/');
         case 14: 
         printf("espaço em branco: %d\n",' ');
+=======
+void ex17()
+{
+    int x, mod; 
+    printf("Digite um número: ");
+    scanf("%d", &x);
+    mod = fabs(x);
+    printf("O módulo do número digitado é %d\n", mod);
+}
+void ex18()
+{
+    float raio, pi = (3.14159);
+    printf("Digite o raio do círculo:\n");
+    scanf("%f", &raio);
+    printf("A circunferência do círculo é: %0.1f\n", 2 * pi * raio);
+    printf("O diâmetro do círculo é: %0.1f\n", 2 * raio);
+    printf("A área do círculo é: %0.1f\n", pi * (raio * raio));
+>>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24:lista1.c
+
+
+void q9(){
+    int vetor[TAM3][TAM3];
+    int i, j;
+    for (i=0;i<TAM3;i++){
+        for (j=0;j<TAM3;j++){
+            printf("Número da posição [%d][%d] do vetor bidimensional: ", i+1,j+1);
+            scanf("%d", &vetor[i][j]);
+        }
+    }
+    puts("\nDiagonal Principal");
+    for (i=0;i<TAM3;i++){
+        for (j=0;j<TAM3;j++){
+            if (i == j){
+                printf("%d ", vetor[i][j]);
+            }
+        }
+>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24
     }
 }
 
 
+<<<<<<< HEAD
 void ex23(){
     int n, c, d, u;
     printf("Digite um número: ");
@@ -332,3 +609,124 @@ int main(){
     //ex27();
 
 }
+=======
+void q10(){
+    int vetor[TAM3][TAM3];
+    int i, j, x, c=0;
+    srand(time(NULL));
+    printf("Digite um valor: ");
+    scanf("%d", &x);
+    puts("\nVetor aleatório");
+    for (i=0;i<TAM3;i++){
+        for (j=0;j<TAM3;j++){
+            vetor[i][j] = rand() % 10;
+            printf("%d ", vetor[i][j]);
+        }
+    }
+    for (i=0;i<TAM3;i++)
+        for (j=0;j<TAM3;j++)
+            if (x == vetor[i][j])
+                c += 1; 
+    printf("\nO valor %d foi repetido %d vezes\n", x,c);
+}
+void ex19()
+{
+        printf("********\t    ***   \t   *   \t         *          \n");
+        printf("*      *\t  *     * \t  ***  \t      *    *        \n");
+        printf("*      *\t *       *\t ***** \t    *        *      \n");
+        printf("*      *\t *       *\t   *   \t  *            *    \n");
+        printf("*      *\t *       *\t   *   \t *               *  \n");
+        printf("*      *\t *       *\t   *   \t   *           *    \n");
+        printf("*      *\t *       *\t   *   \t     *       *      \n");
+        printf("*      *\t  *     * \t   *   \t       *   *        \n");
+        printf("********\t    ***   \t   *   \t         *          \n");
+}
+void ex20()
+{
+    int num;
+    printf("Digite um número:\n");
+    scanf("%d", &num);
+    (num%2)? printf("O número %d é ímpar!") : printf("O número %d é par");
+}
+void ex21()
+{
+    int in1, in2;
+    printf("Digite um número inteiro:\n");
+    scanf("%d", &in1);
+    printf("Digite um número inteiro:\n");
+    scanf("%d", &in2);
+    (in1/in2), (in2/in1)? printf("é múltiplo\n") : printf("Não é múltiplo\n");
+}
+void ex22()
+{
+    //A = 65 B = 66 a = 97 b = 98 * = 42 + = 43 $ = 36 space = 32 0 = 48 / = 47 12 = 49 50
+} 
+void ex23()
+{
+    int num, c, u, d;
+    printf("Digite um número de 3 dígitos: ");
+    scanf("%d", &num);
+    c = (num / 100);
+    u = (d % 10);
+    d = (num % 100) / 10;
+    printf("O número digitado ao contrario é: %d%d%d\n", u, d, c);
+}
+void ex24()
+{
+    int x, n;
+    printf("Digite um valor para x:\n");
+    scanf("%d", &x);
+    printf("Digite um valor para n:\n");
+    scanf("%d", &n);
+    printf("O produto desse valor por 2 elevado a %d é: %d", n, (2 * x << (n - 1)));
+
+
+}
+void ex25()
+{
+    int s, m, h, resto;
+    printf("Digite um tempo em segundos: ");
+    scanf("%d", &s);
+    h = s / 3600;
+    resto = (s % 3600);
+    m = (resto / 60);
+    s = (resto % 60);
+    printf("Nesse tempo temos %d horas %d minutos %d segundos\n", h, m, s);
+}
+
+int main(){
+<<<<<<<< HEAD:lista3.c
+    //q1();
+    //q3();
+    //q4comFuncao();
+}
+========
+    //ex3();
+    //ex4();
+    //ex5();
+    //ex6();
+    //ex7();
+    //ex8();
+    //ex9();
+    //ex10();
+    //ex11();
+    //ex12();
+    //ex13();
+    //ex14();
+    //ex15();
+    //ex16();
+    //ex17();
+    //ex18();
+    //ex19();
+    //ex20();
+    //ex21();
+    //ex22();
+    //ex23();
+    //ex24();
+    //ex25();
+    //ex26();
+    //ex27();
+
+}
+>>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24:lista1.c
+>>>>>>> 27c487385e4eb36831b6bcce755d0e0eed495d24
