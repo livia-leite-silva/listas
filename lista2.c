@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+
+#define test 2
 void ex1()
 {
     int dias;
