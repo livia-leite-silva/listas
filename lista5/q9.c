@@ -26,6 +26,8 @@ int main() {
 
     somatorio_dig_principal(matriz, N);
 
+    free(matriz);
+    
     return 0;
 }
 

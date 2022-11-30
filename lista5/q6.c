@@ -54,8 +54,7 @@ void mediana(int *v, int tam){
     float mediana=0;
     int t=0;
     int troca=0;
-    // for(int i=0; i<tam || troca == 0; i++){
-    //     troca = 0;
+
     while(troca == 0){
         troca = 1;
         for(int j=0; j<tam-1 ; j++){

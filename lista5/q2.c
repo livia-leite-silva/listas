@@ -29,6 +29,7 @@ int main(int argc, char *argv[]){
     printf("[%p]\n", minor_adress(v,tam));
 
     free(v);
+    
     return 0;
 }
 

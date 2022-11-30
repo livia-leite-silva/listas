@@ -28,6 +28,8 @@ int main(int argc, char *argv[]){
     printf("endereço do menor: %p\n", menor_endereco(v,tam));
     printf("endereço do maior: %p\n", maior_endereco(v,tam));
 
+    free(v);
+    
     return 0;
 }
 
