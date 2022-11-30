@@ -1,5 +1,4 @@
 #include <stdio.h>
-// #include <stdio.h>
 
 struct aluno{
     float n1;
@@ -18,7 +17,7 @@ int main(){
 
     a.media = (a.n1 + a.n2) / 2;
 
-    printf("Média: %.1f\n", a.media);
+    printf("\nMédia: %.1f\n", a.media);
 
     return 0;
 }
