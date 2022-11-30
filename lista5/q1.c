@@ -24,11 +24,9 @@ int main(int argc, char* argv[]){
 
     if(opcao[0] == '+'){
         op(f[0],num1,num2,a);
-        printf("%d", a);
         exit(2);
     }else if(opcao[0] == 'x'){
         op(f[1],num1,num2,a);
-        printf("%d", a);
         exit(3);
     }
 
@@ -37,11 +35,12 @@ int main(int argc, char* argv[]){
 
 void somar(int a, int b, int c){
     c = a + b;
-    printf("%d ", c);
+    printf("%d\n", c);
 }
+
 void multiplicar(int a, int b, int c){
     c = a * b;
-    printf("%d ", c);
+    printf("%d\n", c);
 }
 
 void op(void (*f)(int, int, int), int a, int b, int c){
